@@ -1,0 +1,2235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on win32)" generated="20210628 18:02:07.360" rpa="false" schemaversion="2">
+<suite id="s1" name="visitorManagement" source="C:\Users\sutth\OneDrive\Desktop\visitor management\visitorManagement.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open url</arg>
+<arg>Should show login container</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open url" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--ignore-certificate-errors")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210628 18:02:07.777" level="INFO">Opening browser 'chrome' to base url 'https://10.10.20.191:31608/#'.</msg>
+<status status="PASS" starttime="20210628 18:02:07.776" endtime="20210628 18:02:24.225"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210628 18:02:24.225" endtime="20210628 18:02:24.364"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:07.776" endtime="20210628 18:02:24.364"/>
+</kw>
+<kw name="Should show login container" library="keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_loginContainer}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:24.405" level="INFO">Element 'id=login-inner-container' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:24.365" endtime="20210628 18:02:24.405"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:24.364" endtime="20210628 18:02:24.405"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:07.776" endtime="20210628 18:02:24.405"/>
+</kw>
+<test id="s1-t1" name="Scenario: Login the system">
+<kw name="Input username in login page with &quot;super_parking_all&quot;" library="keywords" sourcename="Input username in login page with &quot;${username}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_usernameFieldLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:24.408" endtime="20210628 18:02:24.444"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_usernameFieldLogin}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:24.445" level="INFO">Typing text 'super_parking_all' into text field 'id=username-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:24.444" endtime="20210628 18:02:24.595"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_usernameFieldLogin}</arg>
+<arg>${expectUsername}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:24.635" level="INFO">Content of text field 'id=username-input' is 'super_parking_all'.</msg>
+<status status="PASS" starttime="20210628 18:02:24.595" endtime="20210628 18:02:24.635"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:24.407" endtime="20210628 18:02:24.635"/>
+</kw>
+<kw name="Input password in login page with &quot;password&quot;" library="keywords" sourcename="Input password in login page with &quot;${password}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_passwordFieldLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:24.637" endtime="20210628 18:02:24.668"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_passwordFieldLogin}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:24.668" level="INFO">Typing text 'password' into text field 'id=password-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:24.668" endtime="20210628 18:02:24.791"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_passwordFieldLogin}</arg>
+<arg>${expectPassword}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:24.831" level="INFO">Content of text field 'id=password-input' is 'password'.</msg>
+<status status="PASS" starttime="20210628 18:02:24.792" endtime="20210628 18:02:24.831"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:24.636" endtime="20210628 18:02:24.832"/>
+</kw>
+<kw name="Click button login" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_buttonLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:24.833" endtime="20210628 18:02:24.869"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${css_buttonLogin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:24.870" level="INFO">Clicking button 'id=login-btn'.</msg>
+<status status="PASS" starttime="20210628 18:02:24.869" endtime="20210628 18:02:24.963"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:24.832" endtime="20210628 18:02:24.963"/>
+</kw>
+<kw name="Should show notification message with &quot;Login successfully&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:24.965" endtime="20210628 18:02:25.465"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:25.506" level="INFO">${notification} = Login successfully</msg>
+<status status="PASS" starttime="20210628 18:02:25.466" endtime="20210628 18:02:25.506"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:25.507" endtime="20210628 18:02:25.507"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:24.964" endtime="20210628 18:02:25.508"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:25.509" endtime="20210628 18:02:25.583"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:25.584" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:25.583" endtime="20210628 18:02:25.671"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:25.509" endtime="20210628 18:02:25.671"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:24.406" endtime="20210628 18:02:25.672"/>
+</test>
+<test id="s1-t2" name="Scenario: Add visitor">
+<kw name="Click button bento menu" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_bentomenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:25.675" endtime="20210628 18:02:25.706"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_bentomenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:25.707" level="INFO">Clicking element '//*[@id="menu-container"]//*[@class="app-menu-icon"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:25.706" endtime="20210628 18:02:25.769"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_menuList}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:25.801" level="INFO">Element 'id=app-menu-list' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:25.770" endtime="20210628 18:02:25.802"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:25.675" endtime="20210628 18:02:25.802"/>
+</kw>
+<kw name="Click button visitor management" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_visitorManage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:25.803" endtime="20210628 18:02:25.834"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_visitorManage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:25.835" level="INFO">Clicking element '//*[@id="app-menu-list"]//*[@class="app-menu-item"]//*[@id="app-icon-guest-management"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:25.835" endtime="20210628 18:02:25.928"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_sidebar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:25.928" endtime="20210628 18:02:25.963"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_sidebar}</arg>
+<arg>${css_expectSidebar}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:25.964" level="INFO">Verifying element '//*[@id="left-menu"]//*[@class="sidebar-title-container"]' contains exact text 'Visitor Management'.</msg>
+<status status="PASS" starttime="20210628 18:02:25.963" endtime="20210628 18:02:25.993"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:25.802" endtime="20210628 18:02:25.994"/>
+</kw>
+<kw name="Click button Add Visitor" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_addVisitorButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:25.995" endtime="20210628 18:02:27.198"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_addVisitorButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:27.199" level="INFO">Clicking element 'id=add-guest-btn'.</msg>
+<status status="PASS" starttime="20210628 18:02:27.199" endtime="20210628 18:02:27.315"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:27.316" endtime="20210628 18:02:27.921"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<arg>${css_expectAddVisitorTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:27.922" level="INFO">Verifying element '//*[@class="content-modal-title"]' contains exact text 'Add Visitor'.</msg>
+<status status="PASS" starttime="20210628 18:02:27.921" endtime="20210628 18:02:27.969"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:25.994" endtime="20210628 18:02:27.969"/>
+</kw>
+<kw name="Fill in First Name with &quot;Test&quot;" library="keywords" sourcename="Fill in First Name with &quot;${GuestFirstname}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_guestFirstnameField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:27.971" endtime="20210628 18:02:28.020"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_guestFirstnameField}</arg>
+<arg>${GuestFirstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:28.022" level="INFO">Typing text 'Test' into text field 'id=guest-user-firstname-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:28.021" endtime="20210628 18:02:28.250"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_guestFirstnameField}</arg>
+<arg>${GuestFirstname}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:28.306" level="INFO">Content of text field 'id=guest-user-firstname-input' is 'Test'.</msg>
+<status status="PASS" starttime="20210628 18:02:28.251" endtime="20210628 18:02:28.306"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:27.970" endtime="20210628 18:02:28.306"/>
+</kw>
+<kw name="Fill in Last Name with &quot;Coming&quot;" library="keywords" sourcename="Fill in Last Name with &quot;${GuestLastname}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_guestLastnameField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:28.308" endtime="20210628 18:02:28.358"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_guestLastnameField}</arg>
+<arg>${GuestLastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:28.359" level="INFO">Typing text 'Coming' into text field 'id=guest-user-lastname-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:28.358" endtime="20210628 18:02:28.572"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_guestLastnameField}</arg>
+<arg>${GuestLastname}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:28.625" level="INFO">Content of text field 'id=guest-user-lastname-input' is 'Coming'.</msg>
+<status status="PASS" starttime="20210628 18:02:28.572" endtime="20210628 18:02:28.625"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:28.308" endtime="20210628 18:02:28.625"/>
+</kw>
+<kw name="Fill in Email with &quot;test@coming.com&quot;" library="keywords" sourcename="Fill in Email with &quot;${GuestEmail}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_guestEmailField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:28.627" endtime="20210628 18:02:28.674"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_guestEmailField}</arg>
+<arg>${GuestEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:28.675" level="INFO">Typing text 'test@coming.com' into text field 'id=guest-user-email-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:28.674" endtime="20210628 18:02:29.035"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_guestEmailField}</arg>
+<arg>${GuestEmail}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:29.084" level="INFO">Content of text field 'id=guest-user-email-input' is 'test@coming.com'.</msg>
+<status status="PASS" starttime="20210628 18:02:29.035" endtime="20210628 18:02:29.084"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:28.626" endtime="20210628 18:02:29.085"/>
+</kw>
+<kw name="Fill in Phone with &quot;012345678&quot;" library="keywords" sourcename="Fill in Phone with &quot;${GuestPhone}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_guestPhoneField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:29.088" endtime="20210628 18:02:29.131"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_guestPhoneField}</arg>
+<arg>${GuestPhone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:29.132" level="INFO">Typing text '012345678' into text field 'id=guest-user-phone-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:29.131" endtime="20210628 18:02:29.381"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_guestPhoneField}</arg>
+<arg>${GuestPhone}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:29.424" level="INFO">Content of text field 'id=guest-user-phone-input' is '012345678'.</msg>
+<status status="PASS" starttime="20210628 18:02:29.382" endtime="20210628 18:02:29.425"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:29.086" endtime="20210628 18:02:29.425"/>
+</kw>
+<kw name="Fill in Company with &quot;AAA&quot;" library="keywords" sourcename="Fill in Company with &quot;${GuestCompany}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_guestCompanyField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:29.427" endtime="20210628 18:02:29.465"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_guestCompanyField}</arg>
+<arg>${GuestCompany}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:29.466" level="INFO">Typing text 'AAA' into text field 'id=guest-user-company-input'.</msg>
+<status status="PASS" starttime="20210628 18:02:29.465" endtime="20210628 18:02:29.620"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_guestCompanyField}</arg>
+<arg>${GuestCompany}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:29.668" level="INFO">Content of text field 'id=guest-user-company-input' is 'AAA'.</msg>
+<status status="PASS" starttime="20210628 18:02:29.621" endtime="20210628 18:02:29.668"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:29.426" endtime="20210628 18:02:29.669"/>
+</kw>
+<kw name="Click button Add" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_addGuest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:29.671" endtime="20210628 18:02:29.720"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${css_addGuest}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:29.721" level="INFO">Clicking button '//*[@id="create-guest"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:29.721" endtime="20210628 18:02:29.864"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:29.670" endtime="20210628 18:02:29.865"/>
+</kw>
+<kw name="Should show notification message with &quot;Visitor successfully added.&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:29.867" endtime="20210628 18:02:30.173"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.214" level="INFO">${notification} = Visitor successfully added.</msg>
+<status status="PASS" starttime="20210628 18:02:30.174" endtime="20210628 18:02:30.215"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:30.215" endtime="20210628 18:02:30.215"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:29.866" endtime="20210628 18:02:30.216"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:30.217" endtime="20210628 18:02:30.321"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.322" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:30.321" endtime="20210628 18:02:30.372"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:30.217" endtime="20210628 18:02:30.373"/>
+</kw>
+<kw name="Show visitor info in &quot;Name:&quot; should be &quot;Test Coming&quot;" library="keywords" sourcename="Show visitor info in &quot;${typeProfile}&quot; should be &quot;${detialUser}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_type}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:30.374" endtime="20210628 18:02:30.414"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${profileItem}</var>
+<arg>${css_type}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.429" level="INFO">${profileItem} = 4</msg>
+<status status="PASS" starttime="20210628 18:02:30.414" endtime="20210628 18:02:30.429"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${profileItem}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.467" level="INFO">${profileItemText} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:30.430" endtime="20210628 18:02:30.467"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.468" level="INFO">${type} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:30.468" endtime="20210628 18:02:30.468"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.503" level="INFO">${DetailProfile} = Test Coming</msg>
+<status status="PASS" starttime="20210628 18:02:30.468" endtime="20210628 18:02:30.503"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.503" level="INFO">${detail} = Test Coming</msg>
+<status status="PASS" starttime="20210628 18:02:30.503" endtime="20210628 18:02:30.503"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:30.503" endtime="20210628 18:02:30.504"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:30.468" endtime="20210628 18:02:30.504"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.468" endtime="20210628 18:02:30.504"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.429" endtime="20210628 18:02:30.504"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.540" level="INFO">${profileItemText} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:30.505" endtime="20210628 18:02:30.540"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.541" level="INFO">${type} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:30.541" endtime="20210628 18:02:30.541"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.542" endtime="20210628 18:02:30.542"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.542" endtime="20210628 18:02:30.542"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.542" endtime="20210628 18:02:30.542"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.542" endtime="20210628 18:02:30.543"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.541" endtime="20210628 18:02:30.543"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.504" endtime="20210628 18:02:30.543"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.582" level="INFO">${profileItemText} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:30.543" endtime="20210628 18:02:30.582"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.582" level="INFO">${type} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:30.582" endtime="20210628 18:02:30.582"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.583" endtime="20210628 18:02:30.583"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.583" endtime="20210628 18:02:30.583"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.583" endtime="20210628 18:02:30.583"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.583" endtime="20210628 18:02:30.583"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.582" endtime="20210628 18:02:30.583"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.543" endtime="20210628 18:02:30.583"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.617" level="INFO">${profileItemText} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:30.583" endtime="20210628 18:02:30.617"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.618" level="INFO">${type} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:30.618" endtime="20210628 18:02:30.618"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.618" endtime="20210628 18:02:30.618"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.619" endtime="20210628 18:02:30.619"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.619" endtime="20210628 18:02:30.619"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.618" endtime="20210628 18:02:30.619"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.618" endtime="20210628 18:02:30.619"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.583" endtime="20210628 18:02:30.619"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:30.429" endtime="20210628 18:02:30.619"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:30.373" endtime="20210628 18:02:30.619"/>
+</kw>
+<kw name="Show visitor info in &quot;Company:&quot; should be &quot;AAA&quot;" library="keywords" sourcename="Show visitor info in &quot;${typeProfile}&quot; should be &quot;${detialUser}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_type}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:30.621" endtime="20210628 18:02:30.654"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${profileItem}</var>
+<arg>${css_type}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.669" level="INFO">${profileItem} = 4</msg>
+<status status="PASS" starttime="20210628 18:02:30.654" endtime="20210628 18:02:30.669"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${profileItem}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.692" level="INFO">${profileItemText} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:30.670" endtime="20210628 18:02:30.692"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.693" level="INFO">${type} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:30.693" endtime="20210628 18:02:30.693"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.693" endtime="20210628 18:02:30.693"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.693" endtime="20210628 18:02:30.693"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.694" endtime="20210628 18:02:30.694"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.693" endtime="20210628 18:02:30.694"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.693" endtime="20210628 18:02:30.694"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.670" endtime="20210628 18:02:30.694"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.717" level="INFO">${profileItemText} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:30.694" endtime="20210628 18:02:30.717"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.718" level="INFO">${type} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:30.718" endtime="20210628 18:02:30.718"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.750" level="INFO">${DetailProfile} = AAA</msg>
+<status status="PASS" starttime="20210628 18:02:30.718" endtime="20210628 18:02:30.750"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.751" level="INFO">${detail} = AAA</msg>
+<status status="PASS" starttime="20210628 18:02:30.750" endtime="20210628 18:02:30.751"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:30.751" endtime="20210628 18:02:30.751"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:30.718" endtime="20210628 18:02:30.751"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.718" endtime="20210628 18:02:30.751"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.694" endtime="20210628 18:02:30.751"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.774" level="INFO">${profileItemText} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:30.752" endtime="20210628 18:02:30.774"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.774" level="INFO">${type} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:30.774" endtime="20210628 18:02:30.774"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.775" endtime="20210628 18:02:30.775"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.775" endtime="20210628 18:02:30.775"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.775" endtime="20210628 18:02:30.775"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.774" endtime="20210628 18:02:30.775"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.774" endtime="20210628 18:02:30.775"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.751" endtime="20210628 18:02:30.775"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.800" level="INFO">${profileItemText} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:30.775" endtime="20210628 18:02:30.800"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.800" level="INFO">${type} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:30.800" endtime="20210628 18:02:30.800"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.801" endtime="20210628 18:02:30.801"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.801" endtime="20210628 18:02:30.801"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.801" endtime="20210628 18:02:30.801"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.801" endtime="20210628 18:02:30.801"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.800" endtime="20210628 18:02:30.801"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.775" endtime="20210628 18:02:30.801"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:30.669" endtime="20210628 18:02:30.801"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:30.620" endtime="20210628 18:02:30.801"/>
+</kw>
+<kw name="Show visitor info in &quot;Email:&quot; should be &quot;test@coming.com&quot;" library="keywords" sourcename="Show visitor info in &quot;${typeProfile}&quot; should be &quot;${detialUser}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_type}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:30.802" endtime="20210628 18:02:30.834"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${profileItem}</var>
+<arg>${css_type}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.846" level="INFO">${profileItem} = 4</msg>
+<status status="PASS" starttime="20210628 18:02:30.834" endtime="20210628 18:02:30.846"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${profileItem}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.870" level="INFO">${profileItemText} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:30.847" endtime="20210628 18:02:30.870"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.871" level="INFO">${type} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:30.870" endtime="20210628 18:02:30.871"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.871" endtime="20210628 18:02:30.871"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.871" endtime="20210628 18:02:30.871"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.871" endtime="20210628 18:02:30.872"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.871" endtime="20210628 18:02:30.872"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.871" endtime="20210628 18:02:30.872"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.847" endtime="20210628 18:02:30.872"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.895" level="INFO">${profileItemText} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:30.872" endtime="20210628 18:02:30.895"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.896" level="INFO">${type} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:30.896" endtime="20210628 18:02:30.896"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.896" endtime="20210628 18:02:30.896"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.897" endtime="20210628 18:02:30.897"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.897" endtime="20210628 18:02:30.897"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.896" endtime="20210628 18:02:30.897"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.896" endtime="20210628 18:02:30.897"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.872" endtime="20210628 18:02:30.897"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.921" level="INFO">${profileItemText} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:30.897" endtime="20210628 18:02:30.921"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.921" level="INFO">${type} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:30.921" endtime="20210628 18:02:30.922"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.956" level="INFO">${DetailProfile} = test@coming.com</msg>
+<status status="PASS" starttime="20210628 18:02:30.922" endtime="20210628 18:02:30.956"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.956" level="INFO">${detail} = test@coming.com</msg>
+<status status="PASS" starttime="20210628 18:02:30.956" endtime="20210628 18:02:30.956"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:30.956" endtime="20210628 18:02:30.957"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:30.922" endtime="20210628 18:02:30.957"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.922" endtime="20210628 18:02:30.957"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.897" endtime="20210628 18:02:30.957"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:30.981" level="INFO">${profileItemText} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:30.957" endtime="20210628 18:02:30.981"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:30.981" level="INFO">${type} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:30.981" endtime="20210628 18:02:30.981"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.982" endtime="20210628 18:02:30.982"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.982" endtime="20210628 18:02:30.982"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:30.982" endtime="20210628 18:02:30.982"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:30.982" endtime="20210628 18:02:30.982"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:30.981" endtime="20210628 18:02:30.982"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:30.957" endtime="20210628 18:02:30.982"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:30.846" endtime="20210628 18:02:30.982"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:30.802" endtime="20210628 18:02:30.982"/>
+</kw>
+<kw name="Show visitor info in &quot;Phone:&quot; should be &quot;012345678&quot;" library="keywords" sourcename="Show visitor info in &quot;${typeProfile}&quot; should be &quot;${detialUser}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_type}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:30.984" endtime="20210628 18:02:31.018"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${profileItem}</var>
+<arg>${css_type}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.031" level="INFO">${profileItem} = 4</msg>
+<status status="PASS" starttime="20210628 18:02:31.018" endtime="20210628 18:02:31.031"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${profileItem}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.056" level="INFO">${profileItemText} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:31.031" endtime="20210628 18:02:31.056"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:31.057" level="INFO">${type} = Name:</msg>
+<status status="PASS" starttime="20210628 18:02:31.056" endtime="20210628 18:02:31.057"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.057" endtime="20210628 18:02:31.057"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.057" endtime="20210628 18:02:31.057"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.058" endtime="20210628 18:02:31.058"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:31.057" endtime="20210628 18:02:31.058"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:31.057" endtime="20210628 18:02:31.058"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:31.031" endtime="20210628 18:02:31.058"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.080" level="INFO">${profileItemText} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:31.058" endtime="20210628 18:02:31.080"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:31.081" level="INFO">${type} = Company:</msg>
+<status status="PASS" starttime="20210628 18:02:31.080" endtime="20210628 18:02:31.081"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.081" endtime="20210628 18:02:31.081"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.081" endtime="20210628 18:02:31.081"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.081" endtime="20210628 18:02:31.081"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:31.081" endtime="20210628 18:02:31.081"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:31.081" endtime="20210628 18:02:31.081"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:31.058" endtime="20210628 18:02:31.081"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.105" level="INFO">${profileItemText} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:31.082" endtime="20210628 18:02:31.105"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:31.106" level="INFO">${type} = Email:</msg>
+<status status="PASS" starttime="20210628 18:02:31.105" endtime="20210628 18:02:31.106"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.106" endtime="20210628 18:02:31.106"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.106" endtime="20210628 18:02:31.106"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:31.106" endtime="20210628 18:02:31.106"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:31.106" endtime="20210628 18:02:31.106"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:31.106" endtime="20210628 18:02:31.106"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:31.082" endtime="20210628 18:02:31.106"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_type})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.129" level="INFO">${profileItemText} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:31.107" endtime="20210628 18:02:31.129"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:31.130" level="INFO">${type} = Phone:</msg>
+<status status="PASS" starttime="20210628 18:02:31.130" endtime="20210628 18:02:31.130"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${typeProfile}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${DetailProfile}</var>
+<arg>(${css_DetailProfile} )\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.164" level="INFO">${DetailProfile} = 012345678</msg>
+<status status="PASS" starttime="20210628 18:02:31.130" endtime="20210628 18:02:31.164"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${DetailProfile}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:31.165" level="INFO">${detail} = 012345678</msg>
+<status status="PASS" starttime="20210628 18:02:31.164" endtime="20210628 18:02:31.165"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${type}${detail}</arg>
+<arg>${typeProfile}${detialUser}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:31.165" endtime="20210628 18:02:31.165"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:31.130" endtime="20210628 18:02:31.165"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:31.130" endtime="20210628 18:02:31.165"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:31.107" endtime="20210628 18:02:31.165"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:31.031" endtime="20210628 18:02:31.165"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:30.983" endtime="20210628 18:02:31.166"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:25.674" endtime="20210628 18:02:31.167"/>
+</test>
+<test id="s1-t3" name="Scenario: Add Appointment">
+<kw name="Click button bento menu" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_bentomenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:31.171" endtime="20210628 18:02:31.205"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_bentomenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.206" level="INFO">Clicking element '//*[@id="menu-container"]//*[@class="app-menu-icon"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:31.205" endtime="20210628 18:02:31.269"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_menuList}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:31.308" level="INFO">Element 'id=app-menu-list' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:31.269" endtime="20210628 18:02:31.308"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:31.170" endtime="20210628 18:02:31.309"/>
+</kw>
+<kw name="Click button visitor management" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_visitorManage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:31.310" endtime="20210628 18:02:31.351"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_visitorManage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.352" level="INFO">Clicking element '//*[@id="app-menu-list"]//*[@class="app-menu-item"]//*[@id="app-icon-guest-management"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:31.352" endtime="20210628 18:02:31.444"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_sidebar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:31.444" endtime="20210628 18:02:31.483"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_sidebar}</arg>
+<arg>${css_expectSidebar}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:31.484" level="INFO">Verifying element '//*[@id="left-menu"]//*[@class="sidebar-title-container"]' contains exact text 'Visitor Management'.</msg>
+<status status="PASS" starttime="20210628 18:02:31.484" endtime="20210628 18:02:31.517"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:31.310" endtime="20210628 18:02:31.518"/>
+</kw>
+<kw name="Click kebab icon on info" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_kebabIconOnInfo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:31.519" endtime="20210628 18:02:31.568"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_kebabIconOnInfo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.569" level="INFO">Clicking element '//*[@id="toggle-option-dropdown-"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:31.568" endtime="20210628 18:02:31.694"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_optionListOnInfo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:31.749" level="INFO">Element '//*[@id="option-list"]' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:31.694" endtime="20210628 18:02:31.750"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:31.519" endtime="20210628 18:02:31.750"/>
+</kw>
+<kw name="Click Add Appointment" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_addAppointmentButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:31.752" endtime="20210628 18:02:31.807"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_addAppointmentButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:31.809" level="INFO">Clicking element '//*[@id="add-appointment"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:31.808" endtime="20210628 18:02:31.929"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:31.929" endtime="20210628 18:02:32.793"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<arg>${css_expectAppointmentTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:32.794" level="INFO">Verifying element '//*[@class="content-modal-title"]' contains exact text 'Add Appointment'.</msg>
+<status status="PASS" starttime="20210628 18:02:32.793" endtime="20210628 18:02:32.838"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:31.751" endtime="20210628 18:02:32.838"/>
+</kw>
+<kw name="Fill in Visiting Person with &quot;Sutfah&quot;" library="keywords" sourcename="Fill in Visiting Person with &quot;${NameVisitingPerson}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_visitingPersonField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:32.841" endtime="20210628 18:02:32.894"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_visitingPersonField}</arg>
+<arg>${NameVisitingPerson}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:32.895" level="INFO">Typing text 'Sutfah' into text field '//*[@id="guest-user-person-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:32.894" endtime="20210628 18:02:33.242"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_visitingPersonField}</arg>
+<arg>${NameVisitingPerson}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:33.291" level="INFO">Content of text field '//*[@id="guest-user-person-input"]' is 'Sutfah'.</msg>
+<status status="PASS" starttime="20210628 18:02:33.243" endtime="20210628 18:02:33.291"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:32.840" endtime="20210628 18:02:33.291"/>
+</kw>
+<kw name="Input date today" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_startDateInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:33.292" endtime="20210628 18:02:33.339"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_startDateInput}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:33.340" level="INFO">Clicking element '//*[@id="start-date-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:33.340" endtime="20210628 18:02:33.489"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_buttonNow}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:33.489" endtime="20210628 18:02:33.543"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_buttonNow}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:33.544" level="INFO">Clicking element '//*[@class="rc-calendar-today-btn "]'.</msg>
+<status status="PASS" starttime="20210628 18:02:33.544" endtime="20210628 18:02:33.662"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${date}</var>
+<arg>result_format=%d/%m/%Y %H:%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20210628 18:02:33.663" level="INFO">${date} = 28/06/2021 18:02</msg>
+<status status="PASS" starttime="20210628 18:02:33.663" endtime="20210628 18:02:33.663"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_startDateInput}</arg>
+<arg>${date}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:33.720" level="INFO">Content of text field '//*[@id="start-date-input"]' is '28/06/2021 18:02'.</msg>
+<status status="PASS" starttime="20210628 18:02:33.663" endtime="20210628 18:02:33.720"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:33.292" endtime="20210628 18:02:33.720"/>
+</kw>
+<kw name="Select checkbox request building" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_checkboxRequestBuilding}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:33.721" endtime="20210628 18:02:33.766"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${css_checkboxRequestBuilding}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:33.767" level="INFO">Selecting checkbox '//*[@id="input-checkbox-request-building-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:33.766" endtime="20210628 18:02:33.916"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${css_checkboxRequestBuilding}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210628 18:02:33.917" level="INFO">Verifying checkbox '//*[@id="input-checkbox-request-building-input"]' is selected.</msg>
+<status status="PASS" starttime="20210628 18:02:33.916" endtime="20210628 18:02:33.968"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:33.721" endtime="20210628 18:02:33.968"/>
+</kw>
+<kw name="Select checkbox request parking" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_checkboxRequestParking}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:33.970" endtime="20210628 18:02:34.016"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${css_checkboxRequestParking}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:34.016" level="INFO">Selecting checkbox '//*[@id="input-checkbox-request-parking-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:34.016" endtime="20210628 18:02:34.153"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${css_checkboxRequestParking}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210628 18:02:34.154" level="INFO">Verifying checkbox '//*[@id="input-checkbox-request-parking-input"]' is selected.</msg>
+<status status="PASS" starttime="20210628 18:02:34.153" endtime="20210628 18:02:34.195"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:33.970" endtime="20210628 18:02:34.195"/>
+</kw>
+<kw name="Select checkbox request wifi" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_checkboxRequestWifi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:34.197" endtime="20210628 18:02:34.239"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${css_checkboxRequestWifi}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:34.240" level="INFO">Selecting checkbox '//*[@id="input-checkbox-request-wifi-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:34.239" endtime="20210628 18:02:34.368"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${css_checkboxRequestWifi}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210628 18:02:34.369" level="INFO">Verifying checkbox '//*[@id="input-checkbox-request-wifi-input"]' is selected.</msg>
+<status status="PASS" starttime="20210628 18:02:34.369" endtime="20210628 18:02:34.409"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:34.197" endtime="20210628 18:02:34.409"/>
+</kw>
+<kw name="Fill in Allowed Time with &quot;3&quot;" library="keywords" sourcename="Fill in Allowed Time with &quot;${TimeWifi}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_TimeWifiField}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:34.411" endtime="20210628 18:02:34.449"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${css_TimeWifiField}</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210628 18:02:34.450" level="INFO">Sending key(s) ('CTRL+a+BACKSPACE',) to //*[@id="guest-user-wifi-hours-input"] element.</msg>
+<msg timestamp="20210628 18:02:34.761" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20210628 18:02:34.761" level="INFO">Sending key a</msg>
+<msg timestamp="20210628 18:02:34.761" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg timestamp="20210628 18:02:34.761" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20210628 18:02:34.762" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210628 18:02:34.449" endtime="20210628 18:02:34.822"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_TimeWifiField}</arg>
+<arg>${TimeWifi}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:34.824" level="INFO">Typing text '3' into text field '//*[@id="guest-user-wifi-hours-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:34.823" endtime="20210628 18:02:35.018"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_TimeWifiField}</arg>
+<arg>${TimeWifi}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:35.099" level="INFO">Content of text field '//*[@id="guest-user-wifi-hours-input"]' is '3'.</msg>
+<status status="PASS" starttime="20210628 18:02:35.018" endtime="20210628 18:02:35.099"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:34.410" endtime="20210628 18:02:35.100"/>
+</kw>
+<kw name="Fill in Allowed Device with &quot;2&quot;" library="keywords" sourcename="Fill in Allowed Device with &quot;${DeviceNumber}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_DeviceNumber}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:35.101" endtime="20210628 18:02:35.139"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${css_DeviceNumber}</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210628 18:02:35.141" level="INFO">Sending key(s) ('CTRL+a+BACKSPACE',) to //*[@id="guest-user-device-num-input"] element.</msg>
+<msg timestamp="20210628 18:02:35.451" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20210628 18:02:35.452" level="INFO">Sending key a</msg>
+<msg timestamp="20210628 18:02:35.452" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg timestamp="20210628 18:02:35.452" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20210628 18:02:35.452" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210628 18:02:35.140" endtime="20210628 18:02:35.511"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${css_DeviceNumber}</arg>
+<arg>${DeviceNumber}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:35.513" level="INFO">Typing text '2' into text field '//*[@id="guest-user-device-num-input"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:35.512" endtime="20210628 18:02:35.692"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${css_DeviceNumber}</arg>
+<arg>${DeviceNumber}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20210628 18:02:35.751" level="INFO">Content of text field '//*[@id="guest-user-device-num-input"]' is '2'.</msg>
+<status status="PASS" starttime="20210628 18:02:35.693" endtime="20210628 18:02:35.752"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:35.101" endtime="20210628 18:02:35.752"/>
+</kw>
+<kw name="Click Add Appointment" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_addAppointmentButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:35.754" endtime="20210628 18:02:35.798"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_addAppointmentButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:35.799" level="INFO">Clicking element '//*[@id="add-appointment"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:35.799" endtime="20210628 18:02:35.921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:35.922" endtime="20210628 18:02:35.957"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<arg>${css_expectAppointmentTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:35.958" level="INFO">Verifying element '//*[@class="content-modal-title"]' contains exact text 'Add Appointment'.</msg>
+<status status="PASS" starttime="20210628 18:02:35.957" endtime="20210628 18:02:35.989"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:35.753" endtime="20210628 18:02:35.990"/>
+</kw>
+<kw name="Should show notification message with &quot;Appointment successfully added.&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:35.992" endtime="20210628 18:02:36.101"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.142" level="INFO">${notification} = Appointment successfully added.</msg>
+<status status="PASS" starttime="20210628 18:02:36.101" endtime="20210628 18:02:36.142"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:36.142" endtime="20210628 18:02:36.143"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:35.991" endtime="20210628 18:02:36.143"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:36.145" endtime="20210628 18:02:36.186"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.187" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:36.186" endtime="20210628 18:02:36.261"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:36.144" endtime="20210628 18:02:36.262"/>
+</kw>
+<kw name="Click button Tab Info with &quot;Visiting Info&quot;" library="keywords" sourcename="Click button Tab Info with &quot;${tabInfo}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_TabInfo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:36.263" endtime="20210628 18:02:36.356"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Tab}</var>
+<arg>${css_TabInfo}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.374" level="INFO">${Tab} = 2</msg>
+<status status="PASS" starttime="20210628 18:02:36.356" endtime="20210628 18:02:36.374"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${Tab}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.424" level="INFO">${profileItemText} = Visiting Info</msg>
+<status status="PASS" starttime="20210628 18:02:36.375" endtime="20210628 18:02:36.424"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:36.425" level="INFO">${type} = Visiting Info</msg>
+<status status="PASS" starttime="20210628 18:02:36.424" endtime="20210628 18:02:36.425"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${tabInfo}'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.426" level="INFO">Clicking element '(//*[@class="ant-tabs-nav ant-tabs-nav-animated"]//*[@class=" ant-tabs-tab"])[0+1]'.</msg>
+<status status="PASS" starttime="20210628 18:02:36.426" endtime="20210628 18:02:36.537"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:36.426" endtime="20210628 18:02:36.537"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:36.425" endtime="20210628 18:02:36.537"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:36.375" endtime="20210628 18:02:36.538"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.589" level="INFO">${profileItemText} = Parking Enrty Records</msg>
+<status status="PASS" starttime="20210628 18:02:36.538" endtime="20210628 18:02:36.589"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:36.590" level="INFO">${type} = Parking Enrty Records</msg>
+<status status="PASS" starttime="20210628 18:02:36.589" endtime="20210628 18:02:36.590"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${tabInfo}'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:36.591" endtime="20210628 18:02:36.591"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:36.590" endtime="20210628 18:02:36.591"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:36.590" endtime="20210628 18:02:36.591"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:36.538" endtime="20210628 18:02:36.591"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:36.374" endtime="20210628 18:02:36.591"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:36.263" endtime="20210628 18:02:36.592"/>
+</kw>
+<kw name="Show information in list with &quot;${css_TimeNow}&quot; status is &quot;-&quot;" library="keywords" sourcename="Show information in list with &quot;${dataWannaCheck}&quot; status is &quot;${statusWannaCheck}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_listContainer}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:36.594" endtime="20210628 18:02:36.876"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${listVisitor}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div/div[1]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.900" level="INFO">${listVisitor} = 1</msg>
+<status status="PASS" starttime="20210628 18:02:36.876" endtime="20210628 18:02:36.901"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${listVisitor}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${listVisitorText}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div[${i}+1]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:36.955" level="INFO">${listVisitorText} = 28/06/2021, 18:02 - 28/06/2021, 19:02</msg>
+<status status="PASS" starttime="20210628 18:02:36.901" endtime="20210628 18:02:36.955"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${listVisitorText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:36.956" level="INFO">${detail} = 28/06/2021, 18:02 - 28/06/2021, 19:02</msg>
+<status status="PASS" starttime="20210628 18:02:36.955" endtime="20210628 18:02:36.956"/>
+</kw>
+<if>
+<branch type="IF" condition="'${detail}' == '${dataWannaCheck}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${listVisitorStatus}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div[${i}+1]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:37.007" level="INFO">${listVisitorStatus} = -</msg>
+<status status="PASS" starttime="20210628 18:02:36.957" endtime="20210628 18:02:37.007"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${status}</var>
+<arg>${listVisitorStatus}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:37.008" level="INFO">${status} = -</msg>
+<status status="PASS" starttime="20210628 18:02:37.007" endtime="20210628 18:02:37.008"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${detail}</arg>
+<arg>${dataWannaCheck}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:37.008" endtime="20210628 18:02:37.008"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>${statusWannaCheck}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:37.009" endtime="20210628 18:02:37.009"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:36.956" endtime="20210628 18:02:37.009"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:36.956" endtime="20210628 18:02:37.009"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:36.901" endtime="20210628 18:02:37.009"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:36.901" endtime="20210628 18:02:37.009"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:36.593" endtime="20210628 18:02:37.010"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:31.169" endtime="20210628 18:02:37.011"/>
+</test>
+<test id="s1-t4" name="Scenario: Check in / out appointment">
+<kw name="Click kebab icon on appointment list" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_KebabIcon}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:37.016" endtime="20210628 18:02:37.064"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_KebabIcon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:37.065" level="INFO">Clicking element '//*[@id="toggle-option-dropdown-0"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:37.064" endtime="20210628 18:02:37.166"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_listKebab}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:37.202" level="INFO">Element '//*[@id="option-list"]' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:37.166" endtime="20210628 18:02:37.202"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:37.015" endtime="20210628 18:02:37.202"/>
+</kw>
+<kw name="Click manage appointment" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_manage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:37.204" endtime="20210628 18:02:37.245"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_manage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:37.245" level="INFO">Clicking element '//*[@class="ant-menu-item"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:37.245" endtime="20210628 18:02:37.330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:37.331" endtime="20210628 18:02:38.128"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<arg>${css_expectManageTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:38.129" level="INFO">Verifying element '//*[@class="content-modal-title"]' contains exact text 'Appointment'.</msg>
+<status status="PASS" starttime="20210628 18:02:38.129" endtime="20210628 18:02:38.171"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:37.203" endtime="20210628 18:02:38.172"/>
+</kw>
+<kw name="Click Button Check in" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_ButtonCheckIn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:38.174" endtime="20210628 18:02:38.226"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_ButtonCheckIn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:38.228" level="INFO">Clicking element '//*[@id="checkin-appointment"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:38.227" endtime="20210628 18:02:38.326"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:38.173" endtime="20210628 18:02:38.327"/>
+</kw>
+<kw name="Click Button Save Facility" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_ButtonSaveFacility}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:38.329" endtime="20210628 18:02:38.601"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_ButtonSaveFacility}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:38.603" level="INFO">Clicking element '//*[@id="save-facility"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:38.602" endtime="20210628 18:02:38.747"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:38.328" endtime="20210628 18:02:38.748"/>
+</kw>
+<kw name="Should show notification message with &quot;Request and Checked in successfully.&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:38.750" endtime="20210628 18:02:39.320"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:39.360" level="INFO">${notification} = Request and Checked in successfully.</msg>
+<status status="PASS" starttime="20210628 18:02:39.321" endtime="20210628 18:02:39.360"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:39.361" endtime="20210628 18:02:39.361"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:38.749" endtime="20210628 18:02:39.362"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:39.363" endtime="20210628 18:02:39.404"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:39.405" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:39.404" endtime="20210628 18:02:39.477"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:39.363" endtime="20210628 18:02:39.477"/>
+</kw>
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20210628 18:02:39.479" endtime="20210628 18:02:39.493"/>
+</kw>
+<kw name="Click button Tab Info with &quot;Visiting Info&quot;" library="keywords" sourcename="Click button Tab Info with &quot;${tabInfo}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_TabInfo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:39.495" endtime="20210628 18:02:43.776"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Tab}</var>
+<arg>${css_TabInfo}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:43.793" level="INFO">${Tab} = 2</msg>
+<status status="PASS" starttime="20210628 18:02:43.777" endtime="20210628 18:02:43.793"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${Tab}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:43.835" level="INFO">${profileItemText} = Visiting Info</msg>
+<status status="PASS" starttime="20210628 18:02:43.794" endtime="20210628 18:02:43.835"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:43.836" level="INFO">${type} = Visiting Info</msg>
+<status status="PASS" starttime="20210628 18:02:43.835" endtime="20210628 18:02:43.836"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${tabInfo}'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:43.837" level="INFO">Clicking element '(//*[@class="ant-tabs-nav ant-tabs-nav-animated"]//*[@class=" ant-tabs-tab"])[0+1]'.</msg>
+<status status="PASS" starttime="20210628 18:02:43.836" endtime="20210628 18:02:43.954"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:43.836" endtime="20210628 18:02:43.954"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:43.836" endtime="20210628 18:02:43.954"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:43.794" endtime="20210628 18:02:43.954"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${profileItemText}</var>
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:44.035" level="INFO">${profileItemText} = Parking Enrty Records</msg>
+<status status="PASS" starttime="20210628 18:02:43.955" endtime="20210628 18:02:44.035"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${type}</var>
+<arg>${profileItemText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:44.036" level="INFO">${type} = Parking Enrty Records</msg>
+<status status="PASS" starttime="20210628 18:02:44.035" endtime="20210628 18:02:44.036"/>
+</kw>
+<if>
+<branch type="IF" condition="'${type}' == '${tabInfo}'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(${css_TabInfo})\[${i}+1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210628 18:02:44.036" endtime="20210628 18:02:44.036"/>
+</kw>
+<status status="NOT RUN" starttime="20210628 18:02:44.036" endtime="20210628 18:02:44.036"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:44.036" endtime="20210628 18:02:44.036"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:43.955" endtime="20210628 18:02:44.036"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:43.794" endtime="20210628 18:02:44.036"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:39.495" endtime="20210628 18:02:44.037"/>
+</kw>
+<kw name="Show information in list with &quot;${css_TimeNow}&quot; status is &quot;Checked in&quot;" library="keywords" sourcename="Show information in list with &quot;${dataWannaCheck}&quot; status is &quot;${statusWannaCheck}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_listContainer}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:44.038" endtime="20210628 18:02:44.072"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${listVisitor}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div/div[1]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:44.086" level="INFO">${listVisitor} = 1</msg>
+<status status="PASS" starttime="20210628 18:02:44.072" endtime="20210628 18:02:44.086"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${listVisitor}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${listVisitorText}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div[${i}+1]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:44.121" level="INFO">${listVisitorText} = 28/06/2021, 18:02 - 28/06/2021, 19:02</msg>
+<status status="PASS" starttime="20210628 18:02:44.087" endtime="20210628 18:02:44.122"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${listVisitorText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:44.122" level="INFO">${detail} = 28/06/2021, 18:02 - 28/06/2021, 19:02</msg>
+<status status="PASS" starttime="20210628 18:02:44.122" endtime="20210628 18:02:44.122"/>
+</kw>
+<if>
+<branch type="IF" condition="'${detail}' == '${dataWannaCheck}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${listVisitorStatus}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div[${i}+1]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:44.156" level="INFO">${listVisitorStatus} = Checked in</msg>
+<status status="PASS" starttime="20210628 18:02:44.123" endtime="20210628 18:02:44.156"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${status}</var>
+<arg>${listVisitorStatus}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:44.157" level="INFO">${status} = Checked in</msg>
+<status status="PASS" starttime="20210628 18:02:44.157" endtime="20210628 18:02:44.157"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${detail}</arg>
+<arg>${dataWannaCheck}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:44.157" endtime="20210628 18:02:44.157"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>${statusWannaCheck}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:44.158" endtime="20210628 18:02:44.158"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:44.123" endtime="20210628 18:02:44.158"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:44.122" endtime="20210628 18:02:44.158"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:44.087" endtime="20210628 18:02:44.158"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:44.086" endtime="20210628 18:02:44.158"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:44.037" endtime="20210628 18:02:44.158"/>
+</kw>
+<kw name="Click kebab icon on appointment list" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_KebabIcon}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:44.160" endtime="20210628 18:02:44.202"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_KebabIcon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:44.203" level="INFO">Clicking element '//*[@id="toggle-option-dropdown-0"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:44.202" endtime="20210628 18:02:44.321"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_listKebab}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:44.362" level="INFO">Element '//*[@id="option-list"]' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:44.321" endtime="20210628 18:02:44.362"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:44.159" endtime="20210628 18:02:44.362"/>
+</kw>
+<kw name="Click manage appointment" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_manage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:44.364" endtime="20210628 18:02:44.405"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_manage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:44.406" level="INFO">Clicking element '//*[@class="ant-menu-item"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:44.406" endtime="20210628 18:02:44.510"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:44.510" endtime="20210628 18:02:45.029"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${css_Title}</arg>
+<arg>${css_expectManageTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210628 18:02:45.030" level="INFO">Verifying element '//*[@class="content-modal-title"]' contains exact text 'Appointment'.</msg>
+<status status="PASS" starttime="20210628 18:02:45.030" endtime="20210628 18:02:45.067"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:44.363" endtime="20210628 18:02:45.068"/>
+</kw>
+<kw name="Click Button Check out" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_ButtonCheckOut}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:45.069" endtime="20210628 18:02:45.116"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_ButtonCheckOut}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:45.117" level="INFO">Clicking element '//*[@id="checkout-appointment"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:45.116" endtime="20210628 18:02:45.232"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:45.069" endtime="20210628 18:02:45.232"/>
+</kw>
+<kw name="Click Confirm check out" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_TitleComfirm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:45.234" endtime="20210628 18:02:45.533"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_buttonComfirm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:45.534" level="INFO">Clicking element '//*[@class="custom-button primary"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:45.533" endtime="20210628 18:02:45.661"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_titleDeleteVisitor}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:45.702" level="INFO">Element '//*[@id="rcDialogTitle1"]' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:45.662" endtime="20210628 18:02:45.702"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:45.233" endtime="20210628 18:02:45.702"/>
+</kw>
+<kw name="Should show notification message with &quot;Visitor successfully checked out.&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:45.704" endtime="20210628 18:02:45.967"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.009" level="INFO">${notification} = Visitor successfully checked out.</msg>
+<status status="PASS" starttime="20210628 18:02:45.967" endtime="20210628 18:02:46.009"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:46.010" endtime="20210628 18:02:46.010"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:45.703" endtime="20210628 18:02:46.011"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:46.013" endtime="20210628 18:02:46.079"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.080" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:46.079" endtime="20210628 18:02:46.153"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.011" endtime="20210628 18:02:46.153"/>
+</kw>
+<kw name="Show information in list with &quot;${css_TimeNow}&quot; status is &quot;Checked out&quot;" library="keywords" sourcename="Show information in list with &quot;${dataWannaCheck}&quot; status is &quot;${statusWannaCheck}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_listContainer}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:46.156" endtime="20210628 18:02:46.195"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${listVisitor}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div/div[1]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.212" level="INFO">${listVisitor} = 1</msg>
+<status status="PASS" starttime="20210628 18:02:46.195" endtime="20210628 18:02:46.212"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${listVisitor}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${listVisitorText}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div[${i}+1]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.244" level="INFO">${listVisitorText} = 28/06/2021, 18:02 - 28/06/2021, 19:02</msg>
+<status status="PASS" starttime="20210628 18:02:46.213" endtime="20210628 18:02:46.244"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${detail}</var>
+<arg>${listVisitorText}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:46.245" level="INFO">${detail} = 28/06/2021, 18:02 - 28/06/2021, 19:02</msg>
+<status status="PASS" starttime="20210628 18:02:46.244" endtime="20210628 18:02:46.245"/>
+</kw>
+<if>
+<branch type="IF" condition="'${detail}' == '${dataWannaCheck}'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${listVisitorStatus}</var>
+<arg>//*[@id="user-info-tabs"]/div/div[2]/div/div[3]/div[${i}+1]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.277" level="INFO">${listVisitorStatus} = Checked out</msg>
+<status status="PASS" starttime="20210628 18:02:46.245" endtime="20210628 18:02:46.277"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${status}</var>
+<arg>${listVisitorStatus}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210628 18:02:46.278" level="INFO">${status} = Checked out</msg>
+<status status="PASS" starttime="20210628 18:02:46.277" endtime="20210628 18:02:46.278"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${detail}</arg>
+<arg>${dataWannaCheck}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:46.278" endtime="20210628 18:02:46.279"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>${statusWannaCheck}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:46.279" endtime="20210628 18:02:46.280"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.245" endtime="20210628 18:02:46.280"/>
+</branch>
+<status status="PASS" starttime="20210628 18:02:46.245" endtime="20210628 18:02:46.280"/>
+</if>
+<status status="PASS" starttime="20210628 18:02:46.213" endtime="20210628 18:02:46.280"/>
+</iter>
+<status status="PASS" starttime="20210628 18:02:46.212" endtime="20210628 18:02:46.280"/>
+</for>
+<status status="PASS" starttime="20210628 18:02:46.155" endtime="20210628 18:02:46.280"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:37.014" endtime="20210628 18:02:46.281"/>
+</test>
+<test id="s1-t5" name="Scenario: Delete visitor">
+<kw name="Click kebab icon on info" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_kebabIconOnInfo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:46.286" endtime="20210628 18:02:46.335"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_kebabIconOnInfo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.336" level="INFO">Clicking element '//*[@id="toggle-option-dropdown-"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:46.335" endtime="20210628 18:02:46.435"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${css_optionListOnInfo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210628 18:02:46.475" level="INFO">Element '//*[@id="option-list"]' is displayed.</msg>
+<status status="PASS" starttime="20210628 18:02:46.435" endtime="20210628 18:02:46.475"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.286" endtime="20210628 18:02:46.476"/>
+</kw>
+<kw name="Click delete visitor" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_deletevisitor}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:46.477" endtime="20210628 18:02:46.524"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_deletevisitor}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.526" level="INFO">Clicking element '//*[@id="remove-guest"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:46.525" endtime="20210628 18:02:46.639"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.477" endtime="20210628 18:02:46.639"/>
+</kw>
+<kw name="Click confirm delete" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_buttonDelete}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:46.641" endtime="20210628 18:02:46.690"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_buttonDelete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:46.691" level="INFO">Clicking element '//*[@id="confirm-delete-guest"]'.</msg>
+<status status="PASS" starttime="20210628 18:02:46.690" endtime="20210628 18:02:46.799"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.640" endtime="20210628 18:02:46.799"/>
+</kw>
+<kw name="Should show notification message with &quot;Visitor successfully deleted.&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:46.802" endtime="20210628 18:02:47.070"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:47.109" level="INFO">${notification} = Visitor successfully deleted.</msg>
+<status status="PASS" starttime="20210628 18:02:47.070" endtime="20210628 18:02:47.109"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:47.109" endtime="20210628 18:02:47.110"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.801" endtime="20210628 18:02:47.110"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:47.112" endtime="20210628 18:02:47.153"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:47.154" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:47.153" endtime="20210628 18:02:47.242"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:47.111" endtime="20210628 18:02:47.243"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:46.284" endtime="20210628 18:02:47.244"/>
+</test>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Click button logout</arg>
+<arg>Should show notification message with "logout success"</arg>
+<arg>Click close notifications</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Click button logout" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="menu-container"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:47.249" endtime="20210628 18:02:47.297"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="menu-container"]/i[2]/div/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:47.297" level="INFO">Clicking element '//*[@id="menu-container"]/i[2]/div/span'.</msg>
+<status status="PASS" starttime="20210628 18:02:47.297" endtime="20210628 18:02:47.384"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//*[@id="profile-menu-list"]//*[@id="logout-btn"])</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:47.385" level="INFO">Clicking element '(//*[@id="profile-menu-list"]//*[@id="logout-btn"])'.</msg>
+<status status="PASS" starttime="20210628 18:02:47.384" endtime="20210628 18:02:47.467"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:47.248" endtime="20210628 18:02:47.467"/>
+</kw>
+<kw name="Should show notification message with &quot;logout success&quot;" library="keywords" sourcename="Should show notification message with &quot;${massage}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_notificationAlert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:47.468" endtime="20210628 18:02:47.731"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${notification}</var>
+<arg>${css_notificationAlert}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:47.769" level="INFO">${notification} = logout success</msg>
+<status status="PASS" starttime="20210628 18:02:47.731" endtime="20210628 18:02:47.769"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${massage}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210628 18:02:47.769" endtime="20210628 18:02:47.770"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:47.467" endtime="20210628 18:02:47.770"/>
+</kw>
+<kw name="Click close notifications" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210628 18:02:47.771" endtime="20210628 18:02:47.809"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${css_closeNotification}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210628 18:02:47.810" level="INFO">Clicking element '//*[@id="mod-notification-1"]/div/div/div/div'.</msg>
+<status status="PASS" starttime="20210628 18:02:47.809" endtime="20210628 18:02:47.884"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:47.770" endtime="20210628 18:02:47.885"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210628 18:02:47.885" endtime="20210628 18:02:50.115"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:47.248" endtime="20210628 18:02:50.115"/>
+</kw>
+<status status="PASS" starttime="20210628 18:02:07.363" endtime="20210628 18:02:50.115"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="visitorManagement">visitorManagement</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
